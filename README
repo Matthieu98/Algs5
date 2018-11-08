@@ -1,1 +1,12 @@
-Hi there
+Our game idea is as follows:
+- Opening screen with game title, description of the game, start button to begin the game, and then a link to more info
+  about linked lists
+- When "More Info" is clicked it will either take us to a new screen with a bunch of explanation about Linked Lists,
+  or we will take the user to a webpage online that explains Linked Lists well.
+- When "Start" is clicked, it will take us to a new screen which has a empty Linked Lists (just the head and null text boxes).
+  As the game is played the user will click a buble that is generated and moving around the screen and when clicked, the
+  value in the bubble will become a node that is able to be added to the list. The user will then draw/drag the pointers
+  from the head/any pre-existing nodes to the new node connecting/creating the linked list.
+    - If the user puts a value in the wrong position, they will lose a life and after 3 lost lives they will lose their game.
+      The way that this game will be fun and easy/hard at the same time is that there will be different levels of difficulty.
+      There will be a timer that you have to complete the list, and with harder difficulty, the shorter the timer.
