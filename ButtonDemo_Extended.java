@@ -115,7 +115,7 @@ public class ButtonDemo_Extended implements  ActionListener{
             // redScoreAmount = redScoreAmount + 1;
             // redScore.setText(""+redScoreAmount);
             rule3.setText("whats happening");
-            createNewGUI();
+            createNewGUILearn();
         }
         // else if(e.getSource() == blueButton)
         // {
@@ -129,19 +129,30 @@ public class ButtonDemo_Extended implements  ActionListener{
             // redScore.setText(""+redScoreAmount);
             // blueScore.setText(""+blueScoreAmount);
             rule4.setText("yo yo yo");
-            createNewGUI();
+            createNewGUIStart();
         }
     }
-    //Need to figure out if this can work. If not, just need to create 3 different windows and then set them either visible(t/f) based on what buttons have been clicked.
-    private static void createNewGUI(){
+    
+    private static void createNewGUILearn(){
         JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame2 = new JFrame("Welcome to Sparta");
+        JFrame frame2 = new JFrame("Information For You");
         ButtonDemo_LearnMore demo2 = new ButtonDemo_LearnMore();
         frame2.setContentPane(demo2.createContentPane());
 
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.setSize(1200, 750);
         frame2.setVisible(true);
+    }
+
+    private static void createNewGUIStart(){
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame3 = new JFrame("Lets Play!!");
+        ButtonDemo_Game demo3 = new ButtonDemo_Game();
+        frame3.setContentPane(demo3.createContentPane());
+
+        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame3.setSize(1200, 750);
+        frame3.setVisible(true);
     }
 
     private static void createAndShowGUI() {

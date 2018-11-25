@@ -3,9 +3,9 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ButtonDemo_LearnMore implements  ActionListener{
-    JPanel titlePanel, buttonPanel, rulesPanel;
-    JLabel rule1, rule2, rule3, rule4, redLabel;
+public class ButtonDemo_Game implements  ActionListener{
+    JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
+    JLabel bubble1, bubble2, bubble3, bubble4, redLabel, ll1;
     JButton backButton;
 
     public JPanel createContentPane (){
@@ -29,28 +29,39 @@ public class ButtonDemo_LearnMore implements  ActionListener{
         redLabel.setForeground(Color.red);
         titlePanel.add(redLabel);
 
-        rulesPanel = new JPanel();
-        rulesPanel.setLayout(null);
-        rulesPanel.setLocation(100,235);
-        rulesPanel.setSize(1200, 250);
-        totalGUI.add(rulesPanel);
+        bubblePanel = new JPanel();
+        bubblePanel.setLayout(null);
+        bubblePanel.setLocation(100,235);
+        bubblePanel.setSize(1200, 250);
+        totalGUI.add(bubblePanel);
 
-        rule1 = new JLabel("ZHere is some stuff about stuff");
-        rule1.setLocation(0,0);
-        rule1.setSize(1200,30);
-        rulesPanel.add(rule1);
-        rule2 = new JLabel("And here is some more stuff about things");
-        rule2.setLocation(0,30);
-        rule2.setSize(1200,30);
-        rulesPanel.add(rule2);
-        rule3 = new JLabel("If you are still having trouble understanding, take this link to learn more: https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html");
-        rule3.setLocation(0,60);
-        rule3.setSize(1200,30);
-        rulesPanel.add(rule3);
-        rule4 = new JLabel("Or, you can look at this visiualization to better understand: https://visualgo.net/en/list or https://www.youtube.com/watch?v=ZvHRYEcTxe8");
-        rule4.setLocation(0,90);
-        rule4.setSize(1200,30);
-        rulesPanel.add(rule4);
+        bubble1 = new JLabel("1");
+        bubble1.setLocation(0,0);
+        bubble1.setSize(30,30);
+        bubblePanel.add(bubble1);
+        bubble2 = new JLabel("2");
+        bubble2.setLocation(30,0);
+        bubble2.setSize(30,30);
+        bubblePanel.add(bubble2);
+        bubble3 = new JLabel("3");
+        bubble3.setLocation(60,0);
+        bubble3.setSize(30,30);
+        bubblePanel.add(bubble3);
+        bubble4 = new JLabel("4");
+        bubble4.setLocation(90,0);
+        bubble4.setSize(30,30);
+        bubblePanel.add(bubble4);
+
+        LLPanel = new JPanel();
+        LLPanel.setLayout(null);
+        LLPanel.setLocation(100, 200);
+        LLPanel.setSize(1000, 230);
+        totalGUI.add(LLPanel);
+
+        ll1 = new JLabel("Head");
+        ll1.setLocation(0,0);
+        ll1.setSize(50,30);
+        LLPanel.add(ll1);
 
         // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
@@ -80,15 +91,14 @@ public class ButtonDemo_LearnMore implements  ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backButton)
         {
-            rule3.setText("whats happening");
             createNewGUI();
         }
         else
         {
-            rule4.setText("yo yo yo");
+            bubble4.setText("yo yo yo");
         }
     }
-    
+
     private static void createNewGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame2 = new JFrame("Welcome to Our Game");
@@ -103,10 +113,10 @@ public class ButtonDemo_LearnMore implements  ActionListener{
     private static void createAndShowGUI() {
 
         JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame = new JFrame("Information For You");
+        JFrame frame = new JFrame("Lets Play!!");
 
         //Create and set up the content pane.
-        ButtonDemo_LearnMore demo = new ButtonDemo_LearnMore();
+        ButtonDemo_Game demo = new ButtonDemo_Game();
         frame.setContentPane(demo.createContentPane());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
