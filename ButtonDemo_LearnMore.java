@@ -3,15 +3,10 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ButtonDemo_Extended implements  ActionListener{
-
-    // Definition of global values and items that are part of the GUI.
-    int redScoreAmount = 0;
-    int blueScoreAmount = 0;
-
-    JPanel titlePanel, scorePanel, buttonPanel, rulesPanel;
-    JLabel redLabel, blueLabel, redScore, blueScore, rule1, rule2, rule3, rule4;
-    JButton learnMore, blueButton, startButton;
+public class ButtonDemo_LearnMore implements  ActionListener{
+    JPanel titlePanel, buttonPanel, rulesPanel;
+    JLabel rule1, rule2, rule3, rule4, redLabel;
+    JButton backButton;
 
     public JPanel createContentPane (){
 
@@ -40,41 +35,22 @@ public class ButtonDemo_Extended implements  ActionListener{
         rulesPanel.setSize(1200, 250);
         totalGUI.add(rulesPanel);
 
-        rule1 = new JLabel("Read the following rules to know how to play!");
+        rule1 = new JLabel("ZHere is some stuff about stuff");
         rule1.setLocation(0,0);
         rule1.setSize(1200,30);
         rulesPanel.add(rule1);
-        rule2 = new JLabel("- There will be an empty linked list to start off the game. When you enter, a random number will light up, this is the number you are going to insert in the list.");
+        rule2 = new JLabel("And here is some more stuff about things");
         rule2.setLocation(0,30);
         rule2.setSize(1200,30);
         rulesPanel.add(rule2);
-        rule3 = new JLabel("- You will then move the cursor underneath the linked list to where you think this element will be inserted, thereby showing that you understand how the pointers work.");
+        rule3 = new JLabel("LINK");
         rule3.setLocation(0,60);
         rule3.setSize(1200,30);
         rulesPanel.add(rule3);
-        rule4 = new JLabel("- Finally we will check to make sure you put the cursor in the right place and if youa are right you will keep going and if you are wrong you will lose time!");
+        rule4 = new JLabel("VIDEO");
         rule4.setLocation(0,90);
         rule4.setSize(1200,30);
         rulesPanel.add(rule4);
-
-        // Creation of a Panel to contain the score labels.
-        // scorePanel = new JPanel();
-        // scorePanel.setLayout(null);
-        // scorePanel.setLocation(100, 235);
-        // scorePanel.setSize(900, 250);
-        // totalGUI.add(scorePanel);
-
-        // redScore = new JLabel(""+redScoreAmount);
-        // redScore.setLocation(0, 0);
-        // redScore.setSize(120, 30);
-        // redScore.setHorizontalAlignment(0);
-        // scorePanel.add(redScore);
-
-        // blueScore = new JLabel(""+blueScoreAmount);
-        // blueScore.setLocation(130, 0);
-        // blueScore.setSize(120, 30);
-        // blueScore.setHorizontalAlignment(0);
-        // scorePanel.add(blueScore);
 
         // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
@@ -86,20 +62,13 @@ public class ButtonDemo_Extended implements  ActionListener{
         // We create a button and manipulate it using the syntax we have
         // used before. Now each button has an ActionListener which posts
         // its action out when the button is pressed.
-        learnMore = new JButton("Learn More");
-        learnMore.setLocation(300, 150);
-        learnMore.setSize(500, 70);
-        learnMore.setFont(learnMore.getFont().deriveFont(35.0f));
-        learnMore.addActionListener(this);
-        buttonPanel.add(learnMore);
+        backButton = new JButton("Back");
+        backButton.setLocation(300, 150);
+        backButton.setSize(500, 70);
+        backButton.setFont(backButton.getFont().deriveFont(35.0f));
+        backButton.addActionListener(this);
+        buttonPanel.add(backButton);
         // set size makes it 150 long by 30 up/down
-
-        startButton = new JButton("Start");
-        startButton.setLocation(50, 0);
-        startButton.setSize(950, 125);
-        startButton.setFont(startButton.getFont().deriveFont(48.0f));
-        startButton.addActionListener(this);
-        buttonPanel.add(startButton);
 
         totalGUI.setOpaque(true);
         return totalGUI;
@@ -110,33 +79,21 @@ public class ButtonDemo_Extended implements  ActionListener{
     // Using an if statement, we can determine which button was pressed
     // and change the appropriate values in our GUI.
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == learnMore)
+        if(e.getSource() == backButton)
         {
-            // redScoreAmount = redScoreAmount + 1;
-            // redScore.setText(""+redScoreAmount);
             rule3.setText("whats happening");
             createNewGUI();
         }
-        // else if(e.getSource() == blueButton)
-        // {
-        //     blueScoreAmount = blueScoreAmount + 1;
-        //     blueScore.setText(""+blueScoreAmount);
-        // }
-        else if(e.getSource() == startButton)
+        else
         {
-            // redScoreAmount = 0;
-            // blueScoreAmount = 0;
-            // redScore.setText(""+redScoreAmount);
-            // blueScore.setText(""+blueScoreAmount);
             rule4.setText("yo yo yo");
-            createNewGUI();
         }
     }
-    //Need to figure out if this can work. If not, just need to create 3 different windows and then set them either visible(t/f) based on what buttons have been clicked.
+    
     private static void createNewGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame2 = new JFrame("Welcome to Sparta");
-        ButtonDemo_LearnMore demo2 = new ButtonDemo_LearnMore();
+        ButtonDemo_Extended demo2 = new ButtonDemo_Extended();
         frame2.setContentPane(demo2.createContentPane());
 
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -145,11 +102,12 @@ public class ButtonDemo_Extended implements  ActionListener{
     }
 
     private static void createAndShowGUI() {
+
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Welcome to Our Game");
 
         //Create and set up the content pane.
-        ButtonDemo_Extended demo = new ButtonDemo_Extended();
+        ButtonDemo_Extended demo = new ButtonDemo_LearnMore();
         frame.setContentPane(demo.createContentPane());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
