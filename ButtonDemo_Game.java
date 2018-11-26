@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 
 public class ButtonDemo_Game implements  ActionListener{
     JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
-    JLabel bubble1, bubble2, bubble3, bubble4, redLabel, ll1;
+    JLabel bubble1, bubble2, bubble3, bubble4, redLabel, ll1, ll2;
     JButton backButton;
 
     public JPanel createContentPane (){
@@ -54,7 +54,7 @@ public class ButtonDemo_Game implements  ActionListener{
 
         LLPanel = new JPanel();
         LLPanel.setLayout(null);
-        LLPanel.setLocation(100, 200);
+        LLPanel.setLocation(200, 200);
         LLPanel.setSize(1000, 230);
         totalGUI.add(LLPanel);
 
@@ -62,6 +62,10 @@ public class ButtonDemo_Game implements  ActionListener{
         ll1.setLocation(0,0);
         ll1.setSize(50,30);
         LLPanel.add(ll1);
+        ll2 = new JLabel("Null");
+        ll2.setLocation(120,0);
+        ll2.setSize(50,30);
+        LLPanel.add(ll2);
 
         // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
