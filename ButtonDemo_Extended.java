@@ -9,8 +9,8 @@ public class ButtonDemo_Extended implements  ActionListener{
     int redScoreAmount = 0;
     int blueScoreAmount = 0;
 
-    JPanel titlePanel, scorePanel, buttonPanel;
-    JLabel redLabel, blueLabel, redScore, blueScore;
+    JPanel titlePanel, scorePanel, buttonPanel, rulesPanel;
+    JLabel redLabel, blueLabel, redScore, blueScore, rule1, rule2, rule3, rule4;
     JButton learnMore, blueButton, startButton;
 
     public JPanel createContentPane (){
@@ -34,24 +34,47 @@ public class ButtonDemo_Extended implements  ActionListener{
         redLabel.setForeground(Color.red);
         titlePanel.add(redLabel);
 
+        rulesPanel = new JPanel();
+        rulesPanel.setLayout(null);
+        rulesPanel.setLocation(100,235);
+        rulesPanel.setSize(1200, 250);
+        totalGUI.add(rulesPanel);
+
+        rule1 = new JLabel("Read the following rules to know how to play!");
+        rule1.setLocation(0,0);
+        rule1.setSize(1200,30);
+        rulesPanel.add(rule1);
+        rule2 = new JLabel("- There will be an empty linked list to start off the game. When you enter, a random number will light up, this is the number you are going to insert in the list.");
+        rule2.setLocation(0,30);
+        rule2.setSize(1200,30);
+        rulesPanel.add(rule2);
+        rule3 = new JLabel("- You will then move the cursor underneath the linked list to where you think this element will be inserted, thereby showing that you understand how the pointers work.");
+        rule3.setLocation(0,60);
+        rule3.setSize(1200,30);
+        rulesPanel.add(rule3);
+        rule4 = new JLabel("- Finally we will check to make sure you put the cursor in the right place and if youa are right you will keep going and if you are wrong you will lose time!");
+        rule4.setLocation(0,90);
+        rule4.setSize(1200,30);
+        rulesPanel.add(rule4);
+
         // Creation of a Panel to contain the score labels.
-        scorePanel = new JPanel();
-        scorePanel.setLayout(null);
-        scorePanel.setLocation(100, 235);
-        scorePanel.setSize(900, 250);
-        totalGUI.add(scorePanel);
+        // scorePanel = new JPanel();
+        // scorePanel.setLayout(null);
+        // scorePanel.setLocation(100, 235);
+        // scorePanel.setSize(900, 250);
+        // totalGUI.add(scorePanel);
 
-        redScore = new JLabel(""+redScoreAmount);
-        redScore.setLocation(0, 0);
-        redScore.setSize(120, 30);
-        redScore.setHorizontalAlignment(0);
-        scorePanel.add(redScore);
+        // redScore = new JLabel(""+redScoreAmount);
+        // redScore.setLocation(0, 0);
+        // redScore.setSize(120, 30);
+        // redScore.setHorizontalAlignment(0);
+        // scorePanel.add(redScore);
 
-        blueScore = new JLabel(""+blueScoreAmount);
-        blueScore.setLocation(130, 0);
-        blueScore.setSize(120, 30);
-        blueScore.setHorizontalAlignment(0);
-        scorePanel.add(blueScore);
+        // blueScore = new JLabel(""+blueScoreAmount);
+        // blueScore.setLocation(130, 0);
+        // blueScore.setSize(120, 30);
+        // blueScore.setHorizontalAlignment(0);
+        // scorePanel.add(blueScore);
 
         // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
@@ -89,25 +112,50 @@ public class ButtonDemo_Extended implements  ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == learnMore)
         {
-            redScoreAmount = redScoreAmount + 1;
-            redScore.setText(""+redScoreAmount);
+            // redScoreAmount = redScoreAmount + 1;
+            // redScore.setText(""+redScoreAmount);
+            rule3.setText("whats happening");
+            createNewGUILearn();
         }
-        else if(e.getSource() == blueButton)
-        {
-            blueScoreAmount = blueScoreAmount + 1;
-            blueScore.setText(""+blueScoreAmount);
-        }
+        // else if(e.getSource() == blueButton)
+        // {
+        //     blueScoreAmount = blueScoreAmount + 1;
+        //     blueScore.setText(""+blueScoreAmount);
+        // }
         else if(e.getSource() == startButton)
         {
-            redScoreAmount = 0;
-            blueScoreAmount = 0;
-            redScore.setText(""+redScoreAmount);
-            blueScore.setText(""+blueScoreAmount);
+            // redScoreAmount = 0;
+            // blueScoreAmount = 0;
+            // redScore.setText(""+redScoreAmount);
+            // blueScore.setText(""+blueScoreAmount);
+            rule4.setText("yo yo yo");
+            createNewGUIStart();
         }
+    }
+    
+    private static void createNewGUILearn(){
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame2 = new JFrame("Information For You");
+        ButtonDemo_LearnMore demo2 = new ButtonDemo_LearnMore();
+        frame2.setContentPane(demo2.createContentPane());
+
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setSize(1200, 750);
+        frame2.setVisible(true);
+    }
+
+    private static void createNewGUIStart(){
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame3 = new JFrame("Lets Play!!");
+        ButtonDemo_Game demo3 = new ButtonDemo_Game();
+        frame3.setContentPane(demo3.createContentPane());
+
+        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame3.setSize(1200, 750);
+        frame3.setVisible(true);
     }
 
     private static void createAndShowGUI() {
-
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Welcome to Our Game");
 
