@@ -153,6 +153,7 @@ public class ButtonDemo_Extended implements  ActionListener{
         frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame3.setSize(1200, 750);
         frame3.setVisible(true);
+        //runStuff(); NEED TO FIGURE THIS OUT ON HOW TO RUN THIS
     }
 
     private static void createAndShowGUI() {
