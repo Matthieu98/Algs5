@@ -5,18 +5,15 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 
-public class ButtonDemo_Game implements  ActionListener{
+public class Game implements  ActionListener{
     static JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
     static JLabel bubble1, bubble2, bubble3, bubble4, redLabel, ll1, ll2, ar1, ar2;
     static JButton backButton;
 
     public JPanel createContentPane (){
-
-        // We create a bottom JPanel to place everything on.
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
-        // Creation of a Panel to contain the title labels
         titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(50, 10);
@@ -44,7 +41,6 @@ public class ButtonDemo_Game implements  ActionListener{
         bubble2 = new JLabel("[2]");
         bubble2.setLocation(30,0);
         bubble2.setSize(30,30);
-        // bubble2.setForeground(Color.RED);
         bubblePanel.add(bubble2);
         bubble3 = new JLabel("[3]");
         bubble3.setLocation(60,0);
@@ -78,16 +74,12 @@ public class ButtonDemo_Game implements  ActionListener{
         ll2.setSize(50,30);
         LLPanel.add(ll2);
 
-        // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
         buttonPanel.setSize(1000, 230);
         totalGUI.add(buttonPanel);
 
-        // We create a button and manipulate it using the syntax we have
-        // used before. Now each button has an ActionListener which posts
-        // its action out when the button is pressed.
         backButton = new JButton("Back");
         backButton.setLocation(425, 150);
         backButton.setSize(200, 70);
@@ -99,10 +91,6 @@ public class ButtonDemo_Game implements  ActionListener{
         return totalGUI;
     }
 
-    // This is the new ActionPerformed Method.
-    // It catches any events with an ActionListener attached.
-    // Using an if statement, we can determine which button was pressed
-    // and change the appropriate values in our GUI.
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backButton)
         {
@@ -117,23 +105,18 @@ public class ButtonDemo_Game implements  ActionListener{
     private static void createNewGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame2 = new JFrame("Welcome to Our Game");
-        ButtonDemo_Extended demo2 = new ButtonDemo_Extended();
+        Home_Page demo2 = new Home_Page();
         frame2.setContentPane(demo2.createContentPane());
-
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.setSize(1200, 750);
         frame2.setVisible(true);
     }
 
     private static void createAndShowGUI() {
-
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Lets Play!!");
-
-        //Create and set up the content pane.
-        ButtonDemo_Game demo = new ButtonDemo_Game();
+        Game demo = new Game();
         frame.setContentPane(demo.createContentPane());
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
         frame.setVisible(true);
@@ -154,8 +137,6 @@ public class ButtonDemo_Game implements  ActionListener{
     }
 
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();

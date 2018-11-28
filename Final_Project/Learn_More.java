@@ -3,18 +3,15 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ButtonDemo_LearnMore implements  ActionListener{
+public class Learn_More implements  ActionListener{
     JPanel titlePanel, buttonPanel, rulesPanel;
     JLabel rule1, rule2, rule3, rule4, redLabel;
     JButton backButton;
 
     public JPanel createContentPane (){
-
-        // We create a bottom JPanel to place everything on.
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
-        // Creation of a Panel to contain the title labels
         titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(50, 10);
@@ -52,16 +49,12 @@ public class ButtonDemo_LearnMore implements  ActionListener{
         rule4.setSize(1200,30);
         rulesPanel.add(rule4);
 
-        // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
         buttonPanel.setSize(1000, 230);
         totalGUI.add(buttonPanel);
 
-        // We create a button and manipulate it using the syntax we have
-        // used before. Now each button has an ActionListener which posts
-        // its action out when the button is pressed.
         backButton = new JButton("Back");
         backButton.setLocation(300, 150);
         backButton.setSize(500, 70);
@@ -73,14 +66,9 @@ public class ButtonDemo_LearnMore implements  ActionListener{
         return totalGUI;
     }
 
-    // This is the new ActionPerformed Method.
-    // It catches any events with an ActionListener attached.
-    // Using an if statement, we can determine which button was pressed
-    // and change the appropriate values in our GUI.
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backButton)
         {
-            rule3.setText("whats happening");
             createNewGUI();
         }
         else
@@ -92,7 +80,7 @@ public class ButtonDemo_LearnMore implements  ActionListener{
     private static void createNewGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame2 = new JFrame("Welcome to Our Game");
-        ButtonDemo_Extended demo2 = new ButtonDemo_Extended();
+        Home_Page demo2 = new Home_Page();
         frame2.setContentPane(demo2.createContentPane());
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.setSize(1200, 750);
@@ -100,10 +88,9 @@ public class ButtonDemo_LearnMore implements  ActionListener{
     }
 
     private static void createAndShowGUI() {
-
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Information For You");
-        ButtonDemo_LearnMore demo = new ButtonDemo_LearnMore();
+        Learn_More demo = new Learn_More();
         frame.setContentPane(demo.createContentPane());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
