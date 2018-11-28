@@ -57,25 +57,6 @@ public class ButtonDemo_Extended implements  ActionListener{
         rule4.setSize(1200,30);
         rulesPanel.add(rule4);
 
-        // Creation of a Panel to contain the score labels.
-        // scorePanel = new JPanel();
-        // scorePanel.setLayout(null);
-        // scorePanel.setLocation(100, 235);
-        // scorePanel.setSize(900, 250);
-        // totalGUI.add(scorePanel);
-
-        // redScore = new JLabel(""+redScoreAmount);
-        // redScore.setLocation(0, 0);
-        // redScore.setSize(120, 30);
-        // redScore.setHorizontalAlignment(0);
-        // scorePanel.add(redScore);
-
-        // blueScore = new JLabel(""+blueScoreAmount);
-        // blueScore.setLocation(130, 0);
-        // blueScore.setSize(120, 30);
-        // blueScore.setHorizontalAlignment(0);
-        // scorePanel.add(blueScore);
-
         // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
@@ -112,66 +93,33 @@ public class ButtonDemo_Extended implements  ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == learnMore)
         {
-            // redScoreAmount = redScoreAmount + 1;
-            // redScore.setText(""+redScoreAmount);
-            rule3.setText("whats happening");
             createNewGUILearn();
         }
-        // else if(e.getSource() == blueButton)
-        // {
-        //     blueScoreAmount = blueScoreAmount + 1;
-        //     blueScore.setText(""+blueScoreAmount);
-        // }
         else if(e.getSource() == startButton)
         {
-            // redScoreAmount = 0;
-            // blueScoreAmount = 0;
-            // redScore.setText(""+redScoreAmount);
-            // blueScore.setText(""+blueScoreAmount);
-            rule4.setText("yo yo yo");
             createNewGUIStart();
         }
     }
     
     private static void createNewGUILearn(){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame2 = new JFrame("Information For You");
-        ButtonDemo_LearnMore demo2 = new ButtonDemo_LearnMore();
-        frame2.setContentPane(demo2.createContentPane());
-
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame2.setSize(1200, 750);
-        frame2.setVisible(true);
+        ButtonDemo_LearnMore.main(new String[0]);
     }
 
     private static void createNewGUIStart(){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame3 = new JFrame("Lets Play!!");
-        ButtonDemo_Game demo3 = new ButtonDemo_Game();
-        frame3.setContentPane(demo3.createContentPane());
-
-        frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame3.setSize(1200, 750);
-        frame3.setVisible(true);
-        //runStuff(); NEED TO FIGURE THIS OUT ON HOW TO RUN THIS
+        ButtonDemo_Game.main(new String[0]);
     }
 
     private static void createAndShowGUI() {
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Welcome to Our Game");
-
-        //Create and set up the content pane.
         ButtonDemo_Extended demo = new ButtonDemo_Extended();
         frame.setContentPane(demo.createContentPane());
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
