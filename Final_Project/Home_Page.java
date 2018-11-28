@@ -3,23 +3,15 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ButtonDemo_Extended implements  ActionListener{
-
-    // Definition of global values and items that are part of the GUI.
-    int redScoreAmount = 0;
-    int blueScoreAmount = 0;
-
+public class Home_Page implements  ActionListener{
     JPanel titlePanel, scorePanel, buttonPanel, rulesPanel;
     JLabel redLabel, blueLabel, redScore, blueScore, rule1, rule2, rule3, rule4;
     JButton learnMore, blueButton, startButton;
 
     public JPanel createContentPane (){
-
-        // We create a bottom JPanel to place everything on.
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
-        // Creation of a Panel to contain the title labels
         titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(50, 10);
@@ -57,23 +49,18 @@ public class ButtonDemo_Extended implements  ActionListener{
         rule4.setSize(1200,30);
         rulesPanel.add(rule4);
 
-        // Creation of a Panel to contain all the JButtons.
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
         buttonPanel.setSize(1000, 230);
         totalGUI.add(buttonPanel);
 
-        // We create a button and manipulate it using the syntax we have
-        // used before. Now each button has an ActionListener which posts
-        // its action out when the button is pressed.
         learnMore = new JButton("Learn More");
         learnMore.setLocation(300, 150);
         learnMore.setSize(500, 70);
         learnMore.setFont(learnMore.getFont().deriveFont(35.0f));
         learnMore.addActionListener(this);
         buttonPanel.add(learnMore);
-        // set size makes it 150 long by 30 up/down
 
         startButton = new JButton("Start");
         startButton.setLocation(50, 0);
@@ -86,10 +73,6 @@ public class ButtonDemo_Extended implements  ActionListener{
         return totalGUI;
     }
 
-    // This is the new ActionPerformed Method.
-    // It catches any events with an ActionListener attached.
-    // Using an if statement, we can determine which button was pressed
-    // and change the appropriate values in our GUI.
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == learnMore)
         {
@@ -102,17 +85,17 @@ public class ButtonDemo_Extended implements  ActionListener{
     }
     
     private static void createNewGUILearn(){
-        ButtonDemo_LearnMore.main(new String[0]);
+        Learn_More.main(new String[0]);
     }
 
     private static void createNewGUIStart(){
-        ButtonDemo_Game.main(new String[0]);
+        Game.main(new String[0]);
     }
 
     private static void createAndShowGUI() {
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Welcome to Our Game");
-        ButtonDemo_Extended demo = new ButtonDemo_Extended();
+        Home_Page demo = new Home_Page();
         frame.setContentPane(demo.createContentPane());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
