@@ -94,7 +94,6 @@ public class ButtonDemo_LearnMore implements  ActionListener{
         JFrame frame2 = new JFrame("Welcome to Our Game");
         ButtonDemo_Extended demo2 = new ButtonDemo_Extended();
         frame2.setContentPane(demo2.createContentPane());
-
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.setSize(1200, 750);
         frame2.setVisible(true);
@@ -104,19 +103,14 @@ public class ButtonDemo_LearnMore implements  ActionListener{
 
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Information For You");
-
-        //Create and set up the content pane.
         ButtonDemo_LearnMore demo = new ButtonDemo_LearnMore();
         frame.setContentPane(demo.createContentPane());
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
