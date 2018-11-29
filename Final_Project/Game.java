@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 public class Game implements  ActionListener{
     static JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
     static JLabel redLabel, ll1, ll2, ar1, ar2;
-    static JButton backButton, bubble1, bubble2, bubble3, bubble4;
+    static JButton backButton, bubble1, bubble2, bubble3, bubble4, p1, p2, p3, p4;
 
     public JPanel createContentPane (){
         JPanel totalGUI = new JPanel();
@@ -49,7 +49,6 @@ public class Game implements  ActionListener{
         bubble2.setSize(30,30);
         bubblePanel.add(bubble2);
         
-
         bubble3 = new JButton("[3]");
         bubble3.addActionListener(this);
         bubble3.setLocation(60,0);
@@ -69,7 +68,7 @@ public class Game implements  ActionListener{
         LLPanel.setSize(1000, 230);
         totalGUI.add(LLPanel);
         
-        //setting the HEAD label
+        //setting the HEAD/Null Labels
         ll1 = new JLabel("Head");
         ll1.setLocation(0,0);
         ll1.setSize(50,30);
@@ -86,6 +85,27 @@ public class Game implements  ActionListener{
         ll2.setLocation(360,0);
         ll2.setSize(50,30);
         LLPanel.add(ll2);
+
+        p1 = new JButton("___");
+        p1.addActionListener(this);
+        p1.setLocation(60,0);
+        p1.setSize(30,30);
+        LLPanel.add(p1);
+        p2 = new JButton("___");
+        p2.addActionListener(this);
+        p2.setLocation(100,0);
+        p2.setSize(30,30);
+        LLPanel.add(p2);
+        p3 = new JButton("___");
+        p3.addActionListener(this);
+        p3.setLocation(140,0);
+        p3.setSize(30,30);
+        LLPanel.add(p3);
+        p4 = new JButton("___");
+        p4.addActionListener(this);
+        p4.setLocation(180,0);
+        p4.setSize(30,30);
+        LLPanel.add(p4);
 
         // setting Back button Pane and setting button
         buttonPanel = new JPanel();
@@ -107,18 +127,22 @@ public class Game implements  ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backButton){
             createNewGUI();
-        }
-        else if (e.getSource()== bubble1){
+        } else if (e.getSource()== bubble1){
             bubble1.setText("clicked");
-        }
-        else if (e.getSource()== bubble2){
+        } else if (e.getSource()== bubble2){
             bubble2.setText("clicked");
-        }
-        else if (e.getSource()== bubble3){
+        } else if (e.getSource()== bubble3){
             bubble3.setText("clicked");
-        }
-        else if (e.getSource()== bubble4){
+        } else if (e.getSource()== bubble4){
             bubble4.setText("clicked");
+        } else if (e.getSource()== p1){
+            p1.setText("_|_");
+        } else if (e.getSource()== p2){
+            p2.setText("_|_");
+        } else if (e.getSource()== p3){
+            p3.setText("_|_");
+        } else if (e.getSource()== p4){
+            p4.setText("_|_");
         }
     }
 
