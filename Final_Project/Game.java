@@ -188,7 +188,6 @@ public class Game implements  ActionListener{
             bubble4.setForeground(Color.RED);
         }
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
