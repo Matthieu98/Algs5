@@ -92,24 +92,16 @@ public class Game implements  ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backButton)
-        {
+        if(e.getSource() == backButton){
             createNewGUI();
         }
-        else
-        {
+        else{
             bubble4.setText("yo yo yo");
         }
     }
 
     private static void createNewGUI(){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame2 = new JFrame("Welcome to Our Game");
-        Home_Page demo2 = new Home_Page();
-        frame2.setContentPane(demo2.createContentPane());
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame2.setSize(1200, 750);
-        frame2.setVisible(true);
+        Home_Page.main(new String[0]);
     }
 
     private static void createAndShowGUI() {
