@@ -177,15 +177,17 @@ public class Game implements  ActionListener{
 
     private static void runStuff() {
         Random rand = new Random();
-        int n = rand.nextInt(4) + 1;
+        int n = rand.nextInt(5) + 1;
         if(n == 1){
             bubble1.setForeground(Color.RED);
         } else if(n ==2){
             bubble2.setForeground(Color.RED);
-        } else if (n==2){
+        } else if (n==3){
             bubble3.setForeground(Color.RED);
-        } else {
+        } else if (n==4){
             bubble4.setForeground(Color.RED);
+        } else {
+            bubble5.setForeground(Color.RED);
         }
     }
     public static void main(String[] args) {
