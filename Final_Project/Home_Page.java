@@ -98,18 +98,23 @@ public class Home_Page implements  ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == learnMore)
-        {
+        if(e.getSource() == learnMore){
             createNewGUILearn();
         }
-        else if(e.getSource() == startButton)
-        {
+        else if(e.getSource() == startButton){
             createNewGUIStart();
         }
     }
     
     private static void createNewGUILearn(){
-        Learn_More.main(new String[0]);
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame2 = new JFrame("Welcome to Our Game");
+        Learn_More demo2 = new Learn_More();
+        frame2.setContentPane(demo2.createContentPane());
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setSize(1200, 750);
+        frame2.setVisible(true);
+        // Learn_More.main(new String[0]);
     }
 
     private static void createNewGUIStart(){

@@ -14,6 +14,7 @@ public class Game implements  ActionListener{
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
+        //Creating title panel and title
         titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(50, 10);
@@ -28,6 +29,7 @@ public class Game implements  ActionListener{
         redLabel.setForeground(Color.red);
         titlePanel.add(redLabel);
 
+        //Creating bubbles for the different numbers
         bubblePanel = new JPanel();
         bubblePanel.setLayout(null);
         bubblePanel.setLocation(100,235);
@@ -59,7 +61,8 @@ public class Game implements  ActionListener{
         bubble4.setLocation(90,0);
         bubble4.setSize(30,30);
         bubblePanel.add(bubble4);
-//setting the LL pane
+
+        //setting the LL pane
         LLPanel = new JPanel();
         LLPanel.setLayout(null);
         LLPanel.setLocation(275, 200);
@@ -102,36 +105,25 @@ public class Game implements  ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backButton)
-        {
+        if(e.getSource() == backButton){
             createNewGUI();
         }
-        else if (e.getSource()== bubble1)
-        {
+        else if (e.getSource()== bubble1){
             bubble1.setText("clicked");
         }
-        else if (e.getSource()== bubble2)
-        {
+        else if (e.getSource()== bubble2){
             bubble2.setText("clicked");
         }
-        else if (e.getSource()== bubble3)
-        {
+        else if (e.getSource()== bubble3){
             bubble3.setText("clicked");
         }
-        else if (e.getSource()== bubble4)
-        {
+        else if (e.getSource()== bubble4){
             bubble4.setText("clicked");
         }
     }
 
     private static void createNewGUI(){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame2 = new JFrame("Welcome to Our Game");
-        Home_Page demo2 = new Home_Page();
-        frame2.setContentPane(demo2.createContentPane());
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame2.setSize(1200, 750);
-        frame2.setVisible(true);
+        Home_Page.main(new String[0]);
     }
 
     private static void createAndShowGUI() {
