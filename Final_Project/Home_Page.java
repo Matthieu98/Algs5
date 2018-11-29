@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 
 public class Home_Page implements  ActionListener{
     JPanel titlePanel, scorePanel, buttonPanel, rulesPanel;
-    JLabel redLabel, blueLabel, redScore, blueScore, rule1, rule2, rule3, rule4;
+    JLabel redLabel, blueLabel, redScore, blueScore, rule1, rule2, rule3, rule4, rule5, rule6, rule7;
     JButton learnMore, blueButton, startButton;
 
     public JPanel createContentPane (){
@@ -26,42 +26,66 @@ public class Home_Page implements  ActionListener{
         redLabel.setForeground(Color.red);
         titlePanel.add(redLabel);
 
+
+        //setting pane for directions text 
         rulesPanel = new JPanel();
         rulesPanel.setLayout(null);
         rulesPanel.setLocation(100,235);
         rulesPanel.setSize(1200, 250);
         totalGUI.add(rulesPanel);
+        
 
-        rule1 = new JLabel("Read the following rules to know how to play!");
-        rule1.setLocation(0,0);
+        //setting the text for the directions
+        rule1 = new JLabel("Directions:");
+        rule1.setLocation(10,0);
         rule1.setSize(1200,30);
         rulesPanel.add(rule1);
-        rule2 = new JLabel("- There will be an empty linked list to start off the game. When you enter, a random number will light up, this is the number you are going to insert in the list.");
+        
+        rule2 = new JLabel("- This game will test your ability to insert a node into a Linked List structure.");
         rule2.setLocation(0,30);
         rule2.setSize(1200,30);
         rulesPanel.add(rule2);
-        rule3 = new JLabel("- You will then move the cursor underneath the linked list to where you think this element will be inserted, thereby showing that you understand how the pointers work.");
+        
+        rule3 = new JLabel("- To move a pointer, click on the sequential nodes (starting with Head) until in desired position.");
         rule3.setLocation(0,60);
         rule3.setSize(1200,30);
         rulesPanel.add(rule3);
-        rule4 = new JLabel("- Finally we will check to make sure you put the cursor in the right place and if youa are right you will keep going and if you are wrong you will lose time!");
+        
+        rule4 = new JLabel("- Once pointers are in correct positions,  change the pointers of the currect node by clicking on the poiner bubble followed by clicking the desired next node.");
         rule4.setLocation(0,90);
         rule4.setSize(1200,30);
         rulesPanel.add(rule4);
+        
+        rule5 = new JLabel("- The level will complete once you have inserted all nodes or time runs out.");
+        rule5.setLocation(0,120);
+        rule5.setSize(1200,30);
+        rulesPanel.add(rule5);
+        
+        rule6 = new JLabel("- You will be scored on the number of correctly inserted nodes.");
+        rule6.setLocation(0,150);
+        rule6.setSize(1200,30);
+        rulesPanel.add(rule6);
+        
+        rule7 = new JLabel("- There are three levels with the amount of time decreasing with each level. HAPPY LEARNING!");
+        rule7.setLocation(0,180);
+        rule7.setSize(1200,30);
+        rulesPanel.add(rule7);
 
+        //setting pane for buttons 
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
         buttonPanel.setSize(1000, 230);
         totalGUI.add(buttonPanel);
-
+        
+        //LEARNMORE
         learnMore = new JButton("Learn More");
         learnMore.setLocation(300, 150);
         learnMore.setSize(500, 70);
         learnMore.setFont(learnMore.getFont().deriveFont(35.0f));
         learnMore.addActionListener(this);
         buttonPanel.add(learnMore);
-
+        //START
         startButton = new JButton("Start");
         startButton.setLocation(50, 0);
         startButton.setSize(950, 125);
