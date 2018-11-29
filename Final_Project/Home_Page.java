@@ -74,12 +74,10 @@ public class Home_Page implements  ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == learnMore)
-        {
+        if(e.getSource() == learnMore){
             createNewGUILearn();
         }
-        else if(e.getSource() == startButton)
-        {
+        else if(e.getSource() == startButton){
             createNewGUIStart();
         }
     }
