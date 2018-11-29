@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 public class Game implements  ActionListener{
     static JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
     static JLabel redLabel, ll1, ll2, ar1, ar2;
-    static JButton backButton, bubble1, bubble2, bubble3, bubble4, p1, p2, p3, p4;
+    static JButton backButton, bubble1, bubble2, bubble3, bubble4, bubble5, p1, p2, p3, p4, p5;
 
     public JPanel createContentPane (){
         JPanel totalGUI = new JPanel();
@@ -61,6 +61,12 @@ public class Game implements  ActionListener{
         bubble4.setSize(30,30);
         bubblePanel.add(bubble4);
 
+        bubble5 = new JButton("[5]");
+        bubble5.addActionListener(this);
+        bubble5.setLocation(120,0);
+        bubble5.setSize(30,30);
+        bubblePanel.add(bubble5);
+
         //setting the LL pane
         LLPanel = new JPanel();
         LLPanel.setLayout(null);
@@ -106,6 +112,11 @@ public class Game implements  ActionListener{
         p4.setLocation(180,0);
         p4.setSize(30,30);
         LLPanel.add(p4);
+        p5 = new JButton("___");
+        p5.addActionListener(this);
+        p5.setLocation(230,0);
+        p5.setSize(30,30);
+        LLPanel.add(p5);
 
         // setting Back button Pane and setting button
         buttonPanel = new JPanel();
@@ -135,6 +146,8 @@ public class Game implements  ActionListener{
             bubble3.setText("clicked");
         } else if (e.getSource()== bubble4){
             bubble4.setText("clicked");
+        } else if (e.getSource()== bubble5){
+            bubble5.setText("clicked");
         } else if (e.getSource()== p1){
             p1.setText("_|_");
         } else if (e.getSource()== p2){
@@ -143,6 +156,8 @@ public class Game implements  ActionListener{
             p3.setText("_|_");
         } else if (e.getSource()== p4){
             p4.setText("_|_");
+        } else if (e.getSource()== p5){
+            p5.setText("_|_");
         }
     }
 
