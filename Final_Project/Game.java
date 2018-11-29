@@ -14,6 +14,7 @@ public class Game implements  ActionListener{
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
+        //Creating title panel and title
         titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(50, 10);
@@ -28,6 +29,7 @@ public class Game implements  ActionListener{
         redLabel.setForeground(Color.red);
         titlePanel.add(redLabel);
 
+        //Creating bubbles for the different numbers
         bubblePanel = new JPanel();
         bubblePanel.setLayout(null);
         bubblePanel.setLocation(100,235);
@@ -51,6 +53,7 @@ public class Game implements  ActionListener{
         bubble4.setSize(30,30);
         bubblePanel.add(bubble4);
 
+        //Creating a panel and buttons for the Linked List
         LLPanel = new JPanel();
         LLPanel.setLayout(null);
         LLPanel.setLocation(100, 200);
@@ -74,6 +77,7 @@ public class Game implements  ActionListener{
         ll2.setSize(50,30);
         LLPanel.add(ll2);
 
+        //Panel for a back button
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
