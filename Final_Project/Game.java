@@ -7,8 +7,8 @@ import java.awt.event.ActionEvent;
 
 public class Game implements  ActionListener{
     static JPanel titlePanel, bubblePanel, LLPanel, buttonPanel;
-    static JLabel bubble1, bubble2, bubble3, bubble4, redLabel, ll1, ll2, ar1, ar2;
-    static JButton backButton;
+    static JLabel redLabel, ll1, ll2, ar1, ar2;
+    static JButton backButton, bubble1, bubble2, bubble3, bubble4;
 
     public JPanel createContentPane (){
         JPanel totalGUI = new JPanel();
@@ -36,30 +36,40 @@ public class Game implements  ActionListener{
         bubblePanel.setSize(1200, 250);
         totalGUI.add(bubblePanel);
 
-        bubble1 = new JLabel("[1]");
+        //setting bubble buttons
+        bubble1 = new JButton("[1]");
+        bubble1.addActionListener(this);
         bubble1.setLocation(0,0);
         bubble1.setSize(30,30);
         bubblePanel.add(bubble1);
-        bubble2 = new JLabel("[2]");
+        
+        bubble2 = new JButton("[2]");
+        bubble2.addActionListener(this);
         bubble2.setLocation(30,0);
         bubble2.setSize(30,30);
         bubblePanel.add(bubble2);
-        bubble3 = new JLabel("[3]");
+        
+
+        bubble3 = new JButton("[3]");
+        bubble3.addActionListener(this);
         bubble3.setLocation(60,0);
         bubble3.setSize(30,30);
         bubblePanel.add(bubble3);
-        bubble4 = new JLabel("[4]");
+        
+        bubble4 = new JButton("[4]");
+        bubble4.addActionListener(this);
         bubble4.setLocation(90,0);
         bubble4.setSize(30,30);
         bubblePanel.add(bubble4);
 
-        //Creating a panel and buttons for the Linked List
+        //setting the LL pane
         LLPanel = new JPanel();
         LLPanel.setLayout(null);
-        LLPanel.setLocation(100, 200);
+        LLPanel.setLocation(275, 200);
         LLPanel.setSize(1000, 230);
         totalGUI.add(LLPanel);
-
+        
+        //setting the HEAD label
         ll1 = new JLabel("Head");
         ll1.setLocation(0,0);
         ll1.setSize(50,30);
@@ -77,13 +87,12 @@ public class Game implements  ActionListener{
         ll2.setSize(50,30);
         LLPanel.add(ll2);
 
-        //Panel for a back button
+        // setting Back button Pane and setting button
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(50, 510);
         buttonPanel.setSize(1000, 230);
         totalGUI.add(buttonPanel);
-
         backButton = new JButton("Back");
         backButton.setLocation(425, 150);
         backButton.setSize(200, 70);
@@ -99,8 +108,17 @@ public class Game implements  ActionListener{
         if(e.getSource() == backButton){
             createNewGUI();
         }
-        else{
-            bubble4.setText("yo yo yo");
+        else if (e.getSource()== bubble1){
+            bubble1.setText("clicked");
+        }
+        else if (e.getSource()== bubble2){
+            bubble2.setText("clicked");
+        }
+        else if (e.getSource()== bubble3){
+            bubble3.setText("clicked");
+        }
+        else if (e.getSource()== bubble4){
+            bubble4.setText("clicked");
         }
     }
 
