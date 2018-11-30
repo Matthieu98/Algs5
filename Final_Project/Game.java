@@ -77,10 +77,11 @@ public class Game implements  ActionListener{
         //setting the HEAD/Null Labels
         ll1 = new JLabel("Head");
         ll1.setLocation(0,0);
+        ll1.setFont(ll1.getFont().deriveFont(16.0f));
         ll1.setSize(50,30);
         LLPanel.add(ll1);
         ar1 = new JLabel(" ->");
-        ar1.setLocation(30,0);
+        ar1.setLocation(40,0);
         ar1.setSize(30,30);
         LLPanel.add(ar1);
         ar2 = new JLabel(" ->");
@@ -89,32 +90,34 @@ public class Game implements  ActionListener{
         LLPanel.add(ar2);
         ll2 = new JLabel("Null");
         ll2.setLocation(360,0);
+        ll2.setFont(ll2.getFont().deriveFont(16.0f));
         ll2.setSize(50,30);
         LLPanel.add(ll2);
 
+        //Adding in the containers
         p1 = new JButton("___");
         p1.addActionListener(this);
-        p1.setLocation(60,0);
+        p1.setLocation(70,0);
         p1.setSize(30,30);
         LLPanel.add(p1);
         p2 = new JButton("___");
         p2.addActionListener(this);
-        p2.setLocation(100,0);
+        p2.setLocation(120,0);
         p2.setSize(30,30);
         LLPanel.add(p2);
         p3 = new JButton("___");
         p3.addActionListener(this);
-        p3.setLocation(140,0);
+        p3.setLocation(170,0);
         p3.setSize(30,30);
         LLPanel.add(p3);
         p4 = new JButton("___");
         p4.addActionListener(this);
-        p4.setLocation(180,0);
+        p4.setLocation(220,0);
         p4.setSize(30,30);
         LLPanel.add(p4);
         p5 = new JButton("___");
         p5.addActionListener(this);
-        p5.setLocation(230,0);
+        p5.setLocation(270,0);
         p5.setSize(30,30);
         LLPanel.add(p5);
 

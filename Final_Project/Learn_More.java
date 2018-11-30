@@ -38,7 +38,7 @@ public class Learn_More implements  ActionListener {
         infoPanel.setSize(1200, 250);
         totalGUI.add(infoPanel);
 
-        info1 = new JLabel("ZHere is some stuff about stuff");
+        info1 = new JLabel("Definition: A linked list is a linear collection of data elements, whose order is not given by their physical placement but instead each element points to the next.");
         info1.setLocation(0,0);
         info1.setSize(1200,30);
         infoPanel.add(info1);
